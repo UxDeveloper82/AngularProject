@@ -18,8 +18,12 @@ export class ProductsComponent {
        }, 3000);
     }
 
-    onAddProduct() {
-       this.products.push(this.productName);
+    onAddProduct(form) {
+      //  this.products.push(this.productName);
+      // console.log(form);
+      if (form.valid) {
+         this.products.push(form.value.productName);
+      }
     }
 
     onRemoveProduct(productName: string) {
